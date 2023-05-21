@@ -1,0 +1,17 @@
+[
+	{
+		"id": 1,
+		"priority": 1,
+		"action": {
+		  "type": "redirect",
+		  "redirect": {
+			"regexSubstitution": "https://starcitizen.tools/\\1"
+		  }
+		},
+		"condition": {
+		  "regexFilter": "https://starcitizen.fandom.com/wiki/(.*)",
+		  "resourceTypes": ["main_frame"]
+		}
+    }
+]
+	

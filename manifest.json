@@ -1,0 +1,40 @@
+{
+  "name": "Star Citizen Wiki Redirect",
+  "version": "1.0",
+  "description": "Redirects traffic from the Star Citizen wiki to Star Citizen tools.",
+  "manifest_version": 3,
+  "action":{
+	  "default_icon": {
+			"8":"icons/icon-on_8.png",
+			"16":"icons/icon-on_16.png",
+			"32":"icons/icon-on_32.png",
+			"64":"icons/icon-on_64.png",
+			"128":"icons/icon-on_128.png"
+		},
+		"default_title": "Alt Shift W to toggle redirect"
+  },
+  "host_permissions": ["<all_urls>"],
+  "permissions": [
+	"declarativeNetRequest",
+    "declarativeNetRequestFeedback",
+	"declarativeNetRequestWithHostAccess"],
+  "background": {
+    "service_worker": "service_worker.js",
+	"type": "module"
+  },
+  "commands": {
+    "toggle-redirect": {
+      "suggested_key": {
+        "default": "Alt+Shift+W"
+      },
+      "description": "Toggle redirect from Star Citizen wiki to Star Citizen tools."
+    }
+  },
+  "declarative_net_request": {
+    "rule_resources": [{
+      "id": "star_citizen_redirect",
+      "enabled": true,
+      "path": "rules.json"
+    }]
+  }
+}
